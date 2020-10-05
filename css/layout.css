@@ -6,7 +6,7 @@ body {
         "menu feed msg";
 }
 
-header {
+body>header {
     grid-area: head;
     background-color: #3366ff;
 }
