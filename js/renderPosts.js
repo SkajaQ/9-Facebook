@@ -16,6 +16,21 @@ function renderPosts(data) {
 
     // perrasome reikiamo HTML elemento turini
     feedDOM.innerHTML = HTML;
+
+    const allSeeMoreDOM = document.querySelectorAll('.see-more');
+    console.log(allSeeMoreDOM);
+
+
+    for (let i = 0; i < allSeeMoreDOM.length; i++) {
+        const seeMore = allSeeMoreDOM[i];
+        seeMore.addEventListener('click', function(){
+            // nukeliaujame ir usirandame artimiausia tevini .content,
+            const contentDOM = seeMore.closest('.content');
+            // tam elementui uzdeti klase show
+            contentDOM.classList.add('show');
+        });
+    }
+    
 }
 
 export default renderPosts;
