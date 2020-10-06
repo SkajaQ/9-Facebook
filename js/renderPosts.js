@@ -1,23 +1,21 @@
-import renderSinglePost from "./renderSinglePost.js";
+import renderSinglePost from './renderSinglePost.js';
 
 function renderPosts(data) {
-//  validacija
+    // validacija
 
-// logika
+    // logika
     let HTML = '';
-    
+
     for (let i = 0; i < data.length; i++) {
         const post = data[i];
-
         HTML += renderSinglePost(post);
+    }
 
-    }    
+    // reikiamo elemento paieska realiam HTML'e
     const feedDOM = document.querySelector('main');
 
-    console.log(feedDOM);
-
+    // perrasome reikiamo HTML elemento turini
     feedDOM.innerHTML = HTML;
 }
-
 
 export default renderPosts;

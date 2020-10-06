@@ -23,4 +23,5 @@ aside {
 
 main {
     grid-area: feed;
+    padding: 40px;
 }
