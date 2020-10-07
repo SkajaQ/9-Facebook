@@ -1,9 +1,7 @@
 import renderSinglePost from './renderSinglePost.js';
 
 function renderPosts(data) {
-    // validacija
-
-    // logika
+   
     let HTML = '';
 
     for (let i = 0; i < data.length; i++) {
@@ -18,8 +16,6 @@ function renderPosts(data) {
     feedDOM.innerHTML = HTML;
 
     const allSeeMoreDOM = document.querySelectorAll('.see-more');
-    console.log(allSeeMoreDOM);
-
 
     for (let i = 0; i < allSeeMoreDOM.length; i++) {
         const seeMore = allSeeMoreDOM[i];
@@ -31,6 +27,18 @@ function renderPosts(data) {
         });
     }
     
+
+    const allSeeLessDOM = document.querySelectorAll('.post .see-less'); 
+
+    for (let i =0; i < allSeeLessDOM.length; i++) {
+        const seeLess = allSeeLessDOM[i];
+
+        seeLess.addEventListener('click', () => {
+            const contentDOM= seeLess.closest('.content');
+            contentDOM.classList.remove('show');
+        })
+    }
+
 }
 
 export default renderPosts;
